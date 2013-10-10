@@ -1,0 +1,17 @@
+
+Pour DEMARRER:	
+	1- Lancer le serveur
+	2- Démarrer application graphique
+	3- lancer le client 
+
+Pour ARRETER:
+	1- Arreter le client (Ctrl+C)
+	2- Arreter le serveur
+	3- Arreter appli graphique
+
+WARNING: Désobéis-moi, et t'es bon pour changer tes ports !!!
+
+
+Pour compiler (serveur et client), il faut regarder les commandes plac�es dans le fichier "commandes".
+
+Pour compiler/lancer l'application graphique, "Ctrl-R" sur Qt creator :p (Lancer .pro avec)

@@ -1,0 +1,45 @@
+Hello all.
+ 
+
+J'ai un souci dans une application Qt/C++ pour capturer les touches clavier: l'application est MDI, j'ai surchargé (MainWindow)::keyPressEvent(QKeyEvent *) mais ceci n'est appelé que lorsque mes SubWindows sont toutes fermées.
+ 
+
+J'essaye d'éviter une solution à base de FocusProxy :/
+ 
+
+Est-ce qu'il est possible de définir un listener global à l'application pour les touches clavier ? (je cherche sur google depuis 3h, rien trouvé de probant...)
+ 
+
+Merci :)
+ 
+
+edit -- version Qt4 opensource, UI et compil à l'ancienne.
+
+
+
+
+////////    CODE     \\\\\\\
+
+
+    // dans le .h
+     
+    protected:
+       bool eventFilter(QObject *obj, QEvent *event);
+     
+    // dans le .cpp
+     
+    bool ::eventFilter(QObject *obj, QEvent *event)
+    {
+       if (event->type() == QEvent::KeyPress)
+       {
+           QKeyEvent *kE = static_cast<QKeyEvent*>(event);
+     
+           switch(kE->key())
+           {
+               // Blah blah
+           }
+     
+           return true; // Ne pas propager l'evenement
+       }
+       return QObject::eventFilter(obj, event); // Propager
+    }

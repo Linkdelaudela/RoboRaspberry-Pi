@@ -1,0 +1,8 @@
+gcc face.c -o face -Wall `pkg-config --libs opencv`
+./face --cascade="./haarcascade_frontalface_alt.xml" image.png
+
+gcc client-webcam.c -o client_webcam -Wall `pkg-config --libs opencv`
+gcc serveur-webcam.c -o serveur_webcam -Wall `pkg-config --libs opencv`
+
+avec libusb:
+g++ *.cpp -o client_webcam -Wall `pkg-config --libs opencv` -L /usr/local/lib/ -lusb-1.0

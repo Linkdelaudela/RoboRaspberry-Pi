@@ -1,0 +1,2 @@
+gcc face.c -o face -Wall `pkg-config --libs opencv`
+./face --cascade="./haarcascade_frontalface_alt.xml" image.png
